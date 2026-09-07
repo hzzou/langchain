@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 load_dotenv(verbose=True)
 
 
-api_key = os.getenv('DASHSCOPE_API_KEY')
-base_url = os.getenv('DASHSCOPE_BASE_URL')
+api_key = os.getenv('QIANWEN_API_KEY')
+base_url = os.getenv('QIANWEN_DASHSCOPE_BASE_URL')
 
 
 # 使用阿里通义千问(华北平台有免费额度)
