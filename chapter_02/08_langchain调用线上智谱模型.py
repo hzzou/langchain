@@ -1,6 +1,6 @@
 import os
 # langchain_community 已经终止维护，所以会看见运行警告
-# from langchain_community.chat_models import ChatZhipuAI
+from langchain_community.chat_models import ChatZhipuAI
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from openai import OpenAI

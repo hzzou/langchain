@@ -15,7 +15,7 @@ prompt_template = PromptTemplate.from_template(
     "我的领居姓{lastname}，刚生了{gender}, 你帮我起个名字，简单回答。"
 )
 
-# 调用format方法向模板注入信息
+# 调用format方法向模板注入信息 format方法入参是关键字参数，返回普通字符串
 prompt_text = prompt_template.format(lastname='张', gender='女儿')
 
 print(prompt_text)
@@ -34,6 +34,7 @@ client = Tongyi(
 # 链模式 构建执行链条
 chain = prompt_template | client
 
+# invoke入参是字典，返回的是StringPromptValue对象
 res = chain.invoke(input={'lastname': '张', 'gender': '女儿'})
 
 print(res)
