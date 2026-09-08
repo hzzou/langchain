@@ -39,7 +39,23 @@ prompt_text = chat_prompt_template.invoke({'history': history_data}).to_string()
 
 print(prompt_text)
 
-res = client.invoke(input=prompt_text)
+# Runnable接口，invoke执行
+# res = client.invoke(input=prompt_text)
+#
+# print(res.content)
 
-print(res.content)
+# 顺序不能颠倒
+# 上一个的输出为下一个的输入
+chain = chat_prompt_template | client
+
+# Runnable接口，invoke执行
+# res = chain.invoke(input={'history': history_data})
+#
+# print(res.content)
+
+# Runnable接口，stream执行
+for chunk in chain.stream({'history': history_data}):
+    # 这种是一个字就换一行
+    # print(chunk.content)
+    print(chunk.content, end='', flush=True) # 参数设置是用作不换行
 
