@@ -8,6 +8,9 @@
 * invoke入参是字典，返回的是StringPromptValue对象
 * 只有原生的OpenAI()在构建时，是把api_key/base_url和model分开设置
 * 其余的二次封装都是把它们api_key、base_url、model全部放在同一个类的初始化构造函数里
+* PromptTemplate.from_template 是普通字符串模板
+* ChatPromptTemplate.from_template 是聊天信息用户模板
+* ChatPromptTemplate.from_messages 是生成多条历史聊天记录
 * chain = prompt_template | model   此处的model是加了api_key和base_url的，有时也命名为client, 是模板和大模型的运算
 * 链的构建必须是chain = prompt | model | prompt | model, 不能是chain = prompt = prompt | model | model, 即模板和模型交替
 * 链的构建也可以是chain = prompt | model | parser | model, parser是字符串解析器
@@ -18,3 +21,4 @@
 * StrOutputParser：AIMessage输入, 是把AIMessage剥离掉无用信息，直接输出str字符串有效信息
 * 模型输出：AIMessage
 * 提示词模板输入：字典，提示词模板输出：PromptValue对象
+* InMemoryChatMessageHistory类对象是创建内存零时空间存储历史会话
