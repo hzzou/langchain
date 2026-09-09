@@ -34,7 +34,7 @@ print(template)
 prompt = ChatPromptTemplate.from_messages(
     [
         ('system', '你需要根据会话回应用户问题。对话历史,'),
-        MessagesPlaceholder('chat_history'),
+        MessagesPlaceholder('chat_history'),  # 没有 {}
         ('human', '请回答如下问题，{input}'),
         template
     ]

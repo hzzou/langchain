@@ -21,7 +21,7 @@ client = ChatOpenAI(
 chat_prompt_template = ChatPromptTemplate.from_messages(
     [
         ('system', '你是一个边塞诗人'),
-        MessagesPlaceholder('history'), # 到时候需要注入的历史记录占位
+        MessagesPlaceholder('history'), # 到时候需要注入的历史记录占位，没有{}
         ('human', '请再来一首唐诗'),      # 最后让它再作一首
     ]
 )
