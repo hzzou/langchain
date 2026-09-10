@@ -14,3 +14,4 @@
 * 使用的时候，from dotenv import load_dotenv，load_dotenv(verbose=True)，verbose=True表示以.env文件中为准
 * 用python -m pip, 避免pip与python不同，使用清华的代理。python -m pip install chromadb -i https://pypi.tuna.tsinghua.edu.cn/simple
 * langchain支持三种类型的模型：LLMs(大语言模型(底座))、Chat Models(聊天模型(Instruct))、Embeddings Models(嵌入模型)
+* 创建csv文件时，在没有添加行和列，只有一个框的时候改csv文件格式可以，添加过后行或者列再改则不会生效，这是在pythCharm中，若以文本方式打开，则可以替换分隔符，即修改csv文件格式
