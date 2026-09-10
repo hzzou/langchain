@@ -22,3 +22,6 @@
 * 模型输出：AIMessage
 * 提示词模板输入：字典，提示词模板输出：PromptValue对象
 * InMemoryChatMessageHistory类对象是创建内存零时空间存储历史会话
+* JSONLoader使用python库jq的解析语法，.表示根(整个对象)、[]表示数组、.name表示从根取name的值
+* .hobby[1]表示取hobby对应数组的第二个元素、.[]表示将数组内的每个字典(JSON对象)都取到
+* .[].name表示获取数组内每个字典(JSON)对象的name对应的值

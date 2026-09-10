@@ -1,0 +1,202 @@
+==================== Python 基础语法 ====================
+一、注释
+# 单行注释
+"""
+多行注释
+可以写多行文字
+"""
+
+二、变量与数据类型
+1. 变量定义：变量名 = 值
+a = 10
+name = "张三"
+
+2. 基本数据类型
+int     整数  1, -5
+float   浮点数 3.14
+str     字符串 "abc" 'abc'
+bool    布尔 True / False
+None    空值 None
+
+3. 类型转换
+int()   转整数
+float() 转浮点数
+str()   转字符串
+bool()  转布尔
+
+4. 查看类型 type()
+print(type(a))
+
+三、字符串 str
+1. 单引号、双引号都可以
+s1 = 'hello'
+s2 = "world"
+
+2. 多行字符串
+s3 = """
+第一行
+第二行
+"""
+
+3. 字符串拼接
+s = "a" + "b"
+
+4. 格式化
+name = "小明"
+print(f"你好{name}")   # f-string 推荐
+
+5. 常用方法
+s.strip()      # 去除首尾空格
+s.split(",")   # 按分隔符切割，返回列表
+s.replace("a","b") #替换
+s.upper()       #转大写
+s.lower()       #转小写
+
+四、输入输出
+print(内容)  #输出
+input("提示文字") #接收键盘输入，得到字符串
+
+五、运算符
+1.算数运算符
++ 加  -减  *乘  /除  //整除  %取余  **幂
+
+2.比较运算符
+> < >= <= ==等于 !=不等于
+
+3.逻辑运算符
+and 并且
+or 或者
+not 取反
+
+4.赋值运算符
+=  +=  -=  *=  /=
+
+六、条件判断 if
+if 条件:
+    执行语句
+elif 条件2:
+    执行语句
+else:
+    执行语句
+
+示例：
+age = 18
+if age >=18:
+    print("成年")
+else:
+    print("未成年")
+
+七、循环
+1. while循环
+while 条件:
+    循环体
+
+i = 0
+while i < 5:
+    print(i)
+    i +=1
+
+2. for循环
+for 变量 in 可迭代对象:
+    循环体
+
+# range(start,stop,step)
+for i in range(0,5):
+    print(i)
+
+# break 跳出整个循环
+# continue 跳过本次循环
+
+八、列表 list []
+nums = [1,2,3,4]
+nums[0]      #取第一个元素，下标从0开始
+nums.append(5) #末尾添加
+nums.pop()    #删除末尾
+nums.remove(2) #删除指定值
+len(nums)     #长度
+
+九、元组 tuple () 不可修改
+t = (1,2,3)
+
+十、字典 dict {} 键值对
+info = {"name":"张三","age":20}
+info["name"]   #获取值
+info["age"]=21 #修改
+info.keys()    #所有键
+info.values()  #所有值
+info.items()   #键值对
+
+遍历字典：
+for k,v in info.items():
+    print(k,v)
+
+十一、集合 set {} 去重
+s = {1,2,2,3} #自动去重
+
+十二、函数 def
+def 函数名(参数):
+    函数体
+    return 返回值
+
+示例：
+def add(a,b):
+    res = a + b
+    return res
+
+r = add(1,2)
+
+# 默认参数
+def f(x=10):
+    print(x)
+
+十三、异常捕获 try except
+try:
+    可能出错代码
+except Exception as e:
+    print("出错",e)
+finally:
+    #无论是否出错都会执行
+    pass
+
+十四、文件操作 open
+#读文件
+with open("test.txt","r",encoding="utf-8") as f:
+    text = f.read()
+
+#写文件
+with open("test.txt","w",encoding="utf-8") as f:
+    f.write("内容")
+
+#追加
+with open("test.txt","a",encoding="utf-8") as f:
+    f.write("\n追加内容")
+
+模式：
+r 读
+w 写（覆盖）
+a 追加
+
+十五、模块导入
+import 模块名
+import json
+import csv
+
+from 模块 import 函数
+from math import pi
+
+十六、内置常用函数
+len()   获取长度
+max()   最大值
+min()   最小值
+sum()   求和
+print()
+input()
+type()
+int() str() float()
+
+==================== 小语法规则 ====================
+1. Python靠缩进区分代码块，一般4个空格
+2. 变量名不能用中文、不能以数字开头
+3. 语句末尾不需要分号;
+4. 字符串、列表、字典下标从0开始
+5. 缩进必须统一，不能混用tab和空格
