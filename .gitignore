@@ -3,3 +3,4 @@
 .DS_Store
 .env
 chapter_02/chat_history
+chapter_02/chroma_db
