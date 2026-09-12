@@ -1,11 +1,16 @@
 
 ## 记录
 
+* HumanMessage类对应简写 human/user
+* AIMessage类对应简写 assistant/ai
+* SystemMessage类对应简写 system
+* ToolMessage类对应简写 tool 工具返回结果
+* MessagesPlaceholder类对应简写 placeholder 历史对话列表消息占位
 * base是大模型底座，Instruct是训练后的聊天模型
 * 报错NameError: name 'dashscope' is not defined不是说没定义dashscope，而是说这个区域没定义某个你写的字段
 * or是逻辑或，| 是按位或
-* format方法入参是关键字参数，返回普通字符串
-* invoke入参是字典，返回的是StringPromptValue对象
+* format方法入参是关键字参数，返回普通字符串，只是拼接字符串
+* invoke入参是字典，返回的是StringPromptValue对象，会调用LLM
 * 只有原生的OpenAI()在构建时，是把api_key/base_url和model分开设置
 * 其余的二次封装都是把它们api_key、base_url、model全部放在同一个类的初始化构造函数里
 * PromptTemplate.from_template 是普通字符串模板
@@ -19,7 +24,7 @@
 * __str__和__repr__在调用print和str()和format(), f'{obj}‘字符串格式化的时候会自动调用
 * JsonOutputParser: AIMessage输入, 是把json字符串解析为dict字典
 * StrOutputParser：AIMessage输入, 是把AIMessage剥离掉无用信息，直接输出str字符串有效信息
-* 模型输出：AIMessage
+* model模型输出：AIMessage
 * 提示词模板输入：字典，提示词模板输出：PromptValue对象
 * InMemoryChatMessageHistory类对象是创建内存零时空间存储历史会话
 * JSONLoader使用python库jq的解析语法，.表示根(整个对象)、[]表示数组、.name表示从根取name的值
